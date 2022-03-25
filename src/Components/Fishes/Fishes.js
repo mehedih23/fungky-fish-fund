@@ -1,19 +1,27 @@
 import './Fishes.css'
-import React from 'react'
+import { BsFillCartPlusFill, BsCartCheckFill } from 'react-icons/bs';
+import React, { useState } from 'react'
 
 const Fishes = (props) => {
-    const { fish } = props;
+    const { fish, addToOrder } = props;
     const { name, picture, balance } = fish;
+    const [cartIcon, setCartIcon] = useState(<BsFillCartPlusFill size={'20px'} />)
+
+
     return (
         <div className='fish'>
             <img src={picture} alt="Fish" />
             <div className='fish-info'>
                 <h3>{name}</h3>
-                <div>
-                    <button>
-                        add
+                <div className='footer'>
+                    <button onClick={() => {
+                        setCartIcon(<BsCartCheckFill size={'20px'} />)
+                        addToOrder(fish)
+                    }} /* disabled={cartIcon.type.name === 'BsCartCheckFill' ? true : false} */>
+                        <p style={{ marginRight: '8px' }}>Add</p>
+                        {cartIcon}
                     </button>
-                    <span><b>Price : {balance}</b></span>
+                    <h2>Price : {balance}</h2>
                 </div>
             </div>
         </div>
