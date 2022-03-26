@@ -43,7 +43,7 @@
     .fishes {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 0px;
+        grid-gap: 20px;
     }
     .summary {
         background-color: #0d1831;
@@ -51,6 +51,6 @@
         color: #fff;
         height: 80vh;
         width: 80%;
-        margin: 0 5%;
+        margin: 10% 5%;
     }
 }
