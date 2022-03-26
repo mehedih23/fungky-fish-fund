@@ -11,11 +11,12 @@
 }
 
 .summary {
-    background-color: #0d1831;
+    /* background-color: #0d1831; */
+    background-color: #fff;
     padding: 0 20px;
     position: sticky;
     top: 0;
-    color: #fff;
+    color: #000;
     height: 100vh;
 }
 .summary-button {

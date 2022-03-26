@@ -11,3 +11,6 @@
     border: 2px solid black;
     border-radius: 50px;
 }
+.fish-summary button {
+    border: 1px solid white;
+}

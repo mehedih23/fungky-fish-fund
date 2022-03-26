@@ -38,6 +38,15 @@ const Shop = () => {
         alert(item.name);
     }
 
+    const removeOne = (id) => {
+        let adjustCart = [];
+        const remove = cart.filter(item => item.id !== id)
+        if (remove) {
+            adjustCart = [...remove];
+            setCart(adjustCart);
+        }
+    }
+
     return (
         <div className='shop-main'>
             <div className='fishes'>
@@ -53,7 +62,11 @@ const Shop = () => {
             <div className='summary'>
                 <h3>Order Summary</h3>
                 {
-                    cart.map(item => <OrderSummary key={cart.indexOf(item)} item={item}></OrderSummary>)
+                    cart.map(item => <OrderSummary
+                        key={cart.indexOf(item)}
+                        item={item}
+                        removeOne={removeOne}
+                    ></OrderSummary>)
                 }
                 <div className="summary-button">
                     <button onClick={chooseOne} className='choose-one'>

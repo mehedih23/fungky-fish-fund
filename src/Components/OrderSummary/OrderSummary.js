@@ -1,9 +1,10 @@
 import './OrderSummary.css'
+import { FaTrash } from 'react-icons/fa';
 import React from 'react'
 
 const OrderSummary = (props) => {
-    const { item } = props;
-    const { name, picture } = item;
+    const { item, removeOne } = props;
+    const { name, picture, id } = item;
 
 
 
@@ -12,6 +13,9 @@ const OrderSummary = (props) => {
             <div className='fish-summary'>
                 <img src={picture} alt="item" />
                 <h4>{name}</h4>
+                <button onClick={() => removeOne(id)}>
+                    <FaTrash size={'20px'} />
+                </button>
             </div>
         </div>
     )
