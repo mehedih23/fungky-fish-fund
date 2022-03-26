@@ -32,9 +32,8 @@ const Shop = () => {
         setCart([]);
     }
     const chooseOne = () => {
-        const item = cart[Math.floor(Math.random() * cart.length)]
-        setCart([])
-        alert('Your Selected Item is ' + item.name)
+        const item = cart[Math.floor(Math.random() * cart.length)];
+        setCart([item]);
     }
 
     const removeOne = (id) => {
