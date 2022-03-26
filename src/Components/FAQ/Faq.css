@@ -1,0 +1,15 @@
+.faq h1 {
+    text-align: center;
+}
+.faq-info {
+    padding: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+    .faq h1 {
+        font-size: 25px;
+    }
+    .single-faq h2 {
+        font-size: 20px;
+    }
+}

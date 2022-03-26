@@ -58,7 +58,7 @@ const Shop = () => {
             </div>
 
             <div className='summary'>
-                <h3>Order Summary</h3>
+                <h3>Selected Items</h3>
                 {
                     cart.map(item => <OrderSummary
                         key={cart.indexOf(item)}
