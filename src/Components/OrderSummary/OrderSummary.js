@@ -1,21 +1,18 @@
 import './OrderSummary.css'
-import React, { useState } from 'react'
+import React from 'react'
 
-const OrderSummary = ({ cart }) => {
-    let name = [];
-    for (const fish of cart) {
-        let fishName = fish.name;
-        name.push(fishName);
-    }
+const OrderSummary = (props) => {
+    const { item } = props;
+    const { name, picture } = item;
 
-    const onlyOne = () => {
-        const one = name[Math.floor(Math.random() * name.length)];
-        console.log(one);
-    }
+
+
     return (
         <div>
-            <h4>{name.map(name => name)}</h4>
-            <button onClick={onlyOne}>only one</button>
+            <div className='fish-summary'>
+                <img src={picture} alt="item" />
+                <h4>{name}</h4>
+            </div>
         </div>
     )
 }

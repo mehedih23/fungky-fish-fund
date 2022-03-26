@@ -15,9 +15,29 @@ const Shop = () => {
     }, [])
 
     const addToOrder = (fish) => {
-        const newCart = [...cart, fish];
-        setCart(newCart);
+        const addedItem = cart.find(addedFish => addedFish.id === fish.id)
+        let newCart = [];
+        const moreCart = cart.length === 4;
+        if (moreCart) {
+            alert('You have reach maximum item count.')
+        } else if (addedItem) {
+            alert('Your item is already in cart');
+        } else {
+            newCart = [...cart, fish]
+            setCart(newCart);
+        }
+
     }
+
+    const chooseAgain = () => {
+        setCart([]);
+    }
+    const chooseOne = () => {
+        const item = cart[Math.floor(Math.random() * cart.length)];
+        setCart([]);
+        alert(item.name);
+    }
+
     return (
         <div className='shop-main'>
             <div className='fishes'>
@@ -32,7 +52,17 @@ const Shop = () => {
 
             <div className='summary'>
                 <h3>Order Summary</h3>
-                <OrderSummary cart={cart}></OrderSummary>
+                {
+                    cart.map(item => <OrderSummary key={cart.indexOf(item)} item={item}></OrderSummary>)
+                }
+                <div className="summary-button">
+                    <button onClick={chooseOne} className='choose-one'>
+                        Choose One
+                    </button>
+                    <button onClick={chooseAgain} className='choose-one'>
+                        Choose Again
+                    </button>
+                </div>
             </div>
         </div>
     )

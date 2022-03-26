@@ -17,7 +17,7 @@ const Fishes = (props) => {
                     <button onClick={() => {
                         setCartIcon(<BsCartCheckFill size={'20px'} />)
                         addToOrder(fish)
-                    }} /* disabled={cartIcon.type.name === 'BsCartCheckFill' ? true : false} */>
+                    }}>
                         <p style={{ marginRight: '8px' }}>Add</p>
                         {cartIcon}
                     </button>

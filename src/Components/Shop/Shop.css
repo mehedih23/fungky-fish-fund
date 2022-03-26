@@ -18,6 +18,22 @@
     color: #fff;
     height: 100vh;
 }
+.summary-button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.summary-button button {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid white;
+    padding: 10px 16px;
+}
 @media only screen and (max-width: 576px) {
     .shop-main {
         display: grid;
@@ -34,5 +50,7 @@
         padding: 0 20px;
         color: #fff;
         height: 80vh;
+        width: 80%;
+        margin: 0 5%;
     }
 }
