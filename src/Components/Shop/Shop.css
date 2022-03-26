@@ -11,12 +11,11 @@
 }
 
 .summary {
-    /* background-color: #0d1831; */
-    background-color: #fff;
+    background-color: #0d1831;
     padding: 0 20px;
     position: sticky;
     top: 0;
-    color: #000;
+    color: #fff;
     height: 100vh;
 }
 .summary-button {
@@ -45,6 +44,8 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
+        grid-area: 2;
+        margin-top: 600px;
     }
     .summary {
         background-color: #0d1831;
@@ -53,5 +54,8 @@
         height: 80vh;
         width: 80%;
         margin: 10% 5%;
+        grid-area: 1;
+        position: absolute;
+        top: 170px;
     }
 }

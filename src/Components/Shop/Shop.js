@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 import Fishes from '../Fishes/Fishes';
 import OrderSummary from '../OrderSummary/OrderSummary';
 
-const Shop = () => {
 
+const Shop = () => {
     // Fishes state //
     const [fishes, setFishes] = useState([]);
     const [cart, setCart] = useState([]);
@@ -19,23 +19,22 @@ const Shop = () => {
         let newCart = [];
         const moreCart = cart.length === 4;
         if (moreCart) {
-            alert('You have reach maximum item count.')
+            alert('You have reach maximum item stored.')
         } else if (addedItem) {
             alert('Your item is already in cart');
         } else {
             newCart = [...cart, fish]
             setCart(newCart);
         }
-
     }
 
     const chooseAgain = () => {
         setCart([]);
     }
     const chooseOne = () => {
-        const item = cart[Math.floor(Math.random() * cart.length)];
-        setCart([]);
-        alert(item.name);
+        const item = cart[Math.floor(Math.random() * cart.length)]
+        setCart([])
+        alert('Your Selected Item is ' + item.name)
     }
 
     const removeOne = (id) => {
